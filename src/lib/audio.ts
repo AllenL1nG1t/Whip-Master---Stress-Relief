@@ -1,3 +1,5 @@
+import whipSoundUrl from '../assets/whip.wav';
+
 export class AudioSynth {
   private ctx: AudioContext | null = null;
   private whipBuffers: AudioBuffer[] = [];
@@ -9,7 +11,7 @@ export class AudioSynth {
   }
 
   async preloadSounds() {
-    const files = ['/whip.wav'];
+    const files = [whipSoundUrl];
     for (const file of files) {
       try {
         const response = await fetch(file);
@@ -18,7 +20,7 @@ export class AudioSynth {
           this.bufferArrays.push(arrayBuffer);
         }
       } catch (e) {
-        // Ignore
+        console.error("Failed to fetch audio file:", file, e);
       }
     }
   }

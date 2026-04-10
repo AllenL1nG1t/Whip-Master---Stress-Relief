@@ -27,7 +27,10 @@ export default function App() {
   };
 
   return (
-    <div className="flex h-screen w-full bg-zinc-950 text-zinc-100 overflow-hidden font-sans">
+    <div 
+      className="flex h-screen w-full bg-zinc-950 text-zinc-100 overflow-hidden font-sans"
+      onClick={() => audioSynth.init()}
+    >
       {/* Sidebar Controls */}
       <div className="w-80 bg-zinc-900 border-r border-zinc-800 p-6 flex flex-col gap-6 overflow-y-auto z-10 shadow-xl relative">
         
